@@ -1,0 +1,366 @@
+
+GET http://localhost:8000/ok/
+
+
+# ###
+# GET http://localhost:8000/api/
+
+###
+
+# GET http://localhost:8000/api/users?limit=4
+
+###
+GET http://localhost:8000/users
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOlt7ImZ1bGxfbmFtZSI6IkphbmUgU21pdGgiLCJlbWFpbCI6ImphbmVzbWl0aEFAZXhhbXBsZS5jb20iLCJhZGRyZXNzIjoiNDU2IE9hayBTdHJlZXQiLCJyb2xlIjoiYWRtaW4ifV0sInJvbGUiOlt7ImZ1bGxfbmFtZSI6IkphbmUgU21pdGgiLCJlbWFpbCI6ImphbmVzbWl0aEFAZXhhbXBsZS5jb20iLCJhZGRyZXNzIjoiNDU2IE9hayBTdHJlZXQiLCJyb2xlIjoiYWRtaW4ifV0sImV4cCI6MTcyMDczNDA2M30.lSxikb-PMiUOHQNcMrACvX5IpUdCtBUj1OgrWA_nNTo
+
+###
+GET http://localhost:8000/users/1
+###
+
+POST http://localhost:8000/users
+Content-Type: application/json
+
+{
+    "full_name": "Margaret Smith",
+    "email": "maggy@example.com",
+    "contact_phone": "+0909468321",
+    "address": "465 Sweet Street"
+}
+
+###
+PUT http://localhost:8000/users/1
+Authorization: 
+Content-Type: application/json
+
+{
+    "full_name": "Jane Smith"
+}
+###
+DELETE http://localhost:8000/users/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOlt7ImZ1bGxfbmFtZSI6IkphbmUgU21pdGgiLCJlbWFpbCI6ImphbmVzbWl0aEFAZXhhbXBsZS5jb20iLCJhZGRyZXNzIjoiNDU2IE9hayBTdHJlZXQiLCJyb2xlIjoiYWRtaW4ifV0sInJvbGUiOlt7ImZ1bGxfbmFtZSI6IkphbmUgU21pdGgiLCJlbWFpbCI6ImphbmVzbWl0aEFAZXhhbXBsZS5jb20iLCJhZGRyZXNzIjoiNDU2IE9hayBTdHJlZXQiLCJyb2xlIjoiYWRtaW4ifV0sImV4cCI6MTcyMDcwODA5Nn0.xdbc_JEwRHun-clP98vh0sjIn03bR75TncNKCK-iaNQ
+
+###
+
+POST http://localhost:8000/auth/register
+Content-Type: application/json
+
+{
+<<<<<<< HEAD
+    "email":"rita@gmail.com",
+    "full_name":"Henrietta Gabriella",
+    "contact_phone":"+1234307200",
+    "address":"246 Gold St",
+    "password": "2032",
+=======
+    "email":"shan@gmail.com",
+    "full_name":"Shayan Farhadi",
+    "contact_phone":"+1234876200",
+    "address":"246 South St",
+    "password": "2030",
+>>>>>>> da10e7ade4b1a2b701211c99be6d9ba6e718836a
+    "role": "admin"
+
+}
+
+###
+POST http://localhost:8000/auth/login
+Content-Type: application/json
+
+{
+    "email":"kaila@gmail.com",
+    "password": "55555"
+}
+
+
+###
+GET http://localhost:8000/booking
+ 
+###
+GET http://localhost:8000/bookings-by-user/2
+
+###
+POST http://localhost:8000/booking
+Authorization: 
+Content-Type: application/json
+
+{
+    "user_id": 1,
+    "vehicle_id": 1,
+    "location_name": "Kutus",
+    "total_amount": 1600.00,
+    "booking_date": "2021-05-12",
+    "return_date": "2021-05-15"
+}
+
+
+###
+PUT  https://enuma-car-rental-services-api.onrender.com/booking/approve/32
+Content-Type: application/json
+
+{
+    "booking_status": "approved"
+}
+
+###
+POST http://localhost:8000/bookings
+
+###
+PUT http://localhost:8000/booking/2
+Authorization:
+Content-Type: application/json
+
+{
+    "booking_status": "completed"
+}
+
+GET http://localhost:8000/booking/2
+Authorization: 
+
+###
+DELETE http://localhost:8000/booking/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOlt7ImZ1bGxfbmFtZSI6IkphbmUgU21pdGgiLCJlbWFpbCI6ImphbmVzbWl0aEFAZXhhbXBsZS5jb20iLCJhZGRyZXNzIjoiNDU2IE9hayBTdHJlZXQiLCJyb2xlIjoiYWRtaW4ifV0sInJvbGUiOlt7ImZ1bGxfbmFtZSI6IkphbmUgU21pdGgiLCJlbWFpbCI6ImphbmVzbWl0aEFAZXhhbXBsZS5jb20iLCJhZGRyZXNzIjoiNDU2IE9hayBTdHJlZXQiLCJyb2xlIjoiYWRtaW4ifV0sImV4cCI6MTcyMDcwODA5Nn0.xdbc_JEwRHun-clP98vh0sjIn03bR75TncNKCK-iaNQ
+
+
+###
+
+GET http://localhost:8000/payment
+
+###
+GET http://localhost:8000/payments/2
+
+###
+GET http://localhost:8000/payment-by-id/14
+
+
+###
+POST http://localhost:8000/payment
+Authorization: 
+Content-Type: application/json
+
+{
+    "booking_id": 25,
+    "user_id":  1,
+    "amount": 150.00,
+    "payment_status": "pending",
+    "payment_method": "Card",
+    "transaction_id": "txn_157665564"
+}
+
+
+
+###
+
+PUT http://localhost:8000/payment/2
+Authorization: 
+Content-Type: application/json
+
+{
+     "amount": 90
+}
+###
+
+
+
+GET http://localhost:8000/payment/2
+Authorization: 
+
+###
+DELETE http://localhost:8000/payment/2
+
+###
+GET http://localhost:8000/customerSupportTickets
+
+###
+GET http://localhost:8000/tickets-by-user/2
+
+###
+GET http://localhost:8000/customerSupportTickets/2
+
+###
+POST http://localhost:8000/customerSupportTickets
+Content-Type: application/json
+
+{
+
+    "user_id": 2,
+    "subject": "Payment Issue",
+    "description": "I made a payment but it was not processed. Please help me with this issue."
+}
+
+###
+
+PUT http://localhost:8000/customerSupportTickets/1
+Content-Type: application/json
+
+{
+    "status": "in progress"
+}
+###
+DELETE http://localhost:8000/customerSupportTickets/2
+
+###
+
+
+GET http://localhost:8000/locationBranch
+
+###
+GET http://localhost:8000/locationBranch/1
+
+###
+
+POST http://localhost:8000/locationBranch
+Content-Type: application/json
+
+{
+     "name": "Main Branch",
+    "address": "123 Main St",
+    "contact_phone": "+1112223333"
+}
+
+###
+
+PUT http://localhost:8000/locationBranch/6
+Content-Type: application/json
+
+{
+    "name": "Bistro"
+}
+###
+DELETE http://localhost:8000/locationBranch/6
+
+###
+
+GET http://localhost:8000/fleet
+
+###
+
+POST http://localhost:8000/fleet
+Content-Type: application/json
+
+{
+    "vehicle_id": 3,
+    "depreciation_rate": 0.50,
+    "current_value": 79000.00,
+    "maintenance_cost": 900.00,
+    "status": "active"
+}
+
+###
+
+
+GET http://localhost:8000/fleet/2
+###
+
+# GET http://localhost:8000/api/filterFleetInfo/1
+###
+
+GET http://localhost:8000/fleetInfo
+###
+
+
+PUT http://localhost:8000/fleet/3
+Content-Type: application/json
+
+{
+    "depreciation_rate": 0.12
+}
+###
+DELETE http://localhost:8000/fleet/3
+
+
+###
+
+GET http://localhost:8000/vehicle
+
+###
+GET http://localhost:8000/vehicle/1
+
+###
+
+POST http://localhost:8000/vehicle
+Content-Type: application/json
+
+{
+      "rental_rate": 2900,
+      "vehicleSpec_id": 17
+}
+
+###
+
+PUT http://localhost:8000/vehicle/6
+Content-Type: application/json
+
+{
+    "availability": false
+}
+###
+
+GET http://localhost:8000/vehicle/6
+
+###
+GET http://localhost:8000/vehicleswithdetails
+
+###
+GET http://localhost:8000/vehicle-with-specs/1
+
+###
+DELETE http://localhost:8000/vehicle/6
+
+###
+
+GET http://localhost:8000/vehicleSpecs
+
+###
+
+POST http://localhost:8000/vehicleSpecs
+Content-Type: application/json
+
+{
+    "manufacturer": "Toyota",
+    "model": "Camry",
+    "year": "2022",
+    "fuel_type": "Petrol",
+    "engine_capacity": "2.5L",
+    "transmission": "Automatic",
+    "seating_capacity": "5",
+    "color": "Red",
+    "features": "Air Conditioning, Power Steering, Bluetooth, Cruise Control"
+}
+
+###
+
+PUT http://localhost:8000/vehicleSpecs/6
+Content-Type: application/json
+
+{
+    "fuel_type": "diesel"
+}
+###
+
+GET http://localhost:8000/vehicleSpecs/6
+
+###
+DELETE http://localhost:8000/vehicleSpecs/6
+
+###
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
