@@ -71,6 +71,7 @@ export const getVehicleInfoService = async (id: number) => {
                     year: true,
                     color: true,
                     fuel_type: true,
+                    imageUrl: true,
                     transmission: true,
                     engine_capacity: true,
                     seating_capacity: true,
