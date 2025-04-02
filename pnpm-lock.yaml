@@ -9,7 +9,7 @@ importers:
   .:
     dependencies:
       '@hono/node-server':
-        specifier: ^1.11.2
+        specifier: ^1.12.0
         version: 1.12.0
       '@hono/prometheus':
         specifier: ^1.0.1
